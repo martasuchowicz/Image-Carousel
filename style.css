@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 850px;
+    /* should be 600px, making image height 600px in img doesn't work */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%); /* this is the DEFAULT position */
+}
+
+.container img.onscreen {
+    transform: translateX(0);
+    transition: transform 3s;
+}
+
+.container img.offscreen-left {
+    transform: translateX(-100%);
+    transition: transform 3s;
+}
+
+#dots {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px white solid;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.on {
+    background-color: white;
+}
